@@ -23,7 +23,7 @@ app = Client(
     api_hash=config.API_HASH,
     bot_token=config.BOT_TOKEN,
     in_memory=True,
-    plugins=dict(root="STRING_BABYGEN_BOT"),
+    plugins=dict(root="StringGenBot"),
 )
 
 if __name__ == "__main__":
