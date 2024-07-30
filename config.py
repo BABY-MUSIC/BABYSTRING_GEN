@@ -9,4 +9,4 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 OWNER_ID = int(getenv("OWNER_ID","6407861676"))
 
 MONGO_DB_URI = getenv("MONGO_DB_URI","mongodb+srv://BABYTUNE7654:<BABYTUNE7654>@cluster0.i7r8ucr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-MUST_JOIN = getenv("MUST_JOIN","AAWAJ_NICHE")
+MUST_JOIN = getenv("MUST_JOIN","BABY09_WORLD")
