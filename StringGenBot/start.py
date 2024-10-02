@@ -10,9 +10,10 @@ def filter(cmd: str):
 @Client.on_message(filter("start"))
 async def start(bot: Client, msg: Message):
     me2 = (await bot.get_me()).mention
-    await bot.send_message(
+    await bot.send_photo(
         chat_id=msg.chat.id,
-        text=f"""✦ » ʜᴇʏ  {msg.from_user.mention}  ✤,
+        photo="https://i.imghippo.com/files/8BmmA1727813203.jpg",
+        caption=f"""✦ » ʜᴇʏ  {msg.from_user.mention}  ✤,
 ❍ ɪ ᴀᴍ{me2},
 
 ❍ Aɴ ᴏᴘᴇɴ sᴏᴜʀᴄᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ, ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ ᴩʏʀᴏɢʀᴀᴍ.
