@@ -13,23 +13,26 @@ async def start(bot: Client, msg: Message):
     await bot.send_message(
         chat_id=msg.chat.id,
         text=f"""✦ » ʜᴇʏ  {msg.from_user.mention}  ✤,
-✦ » ɪ ᴀᴍ{me2},
+❍ ɪ ᴀᴍ{me2},
 
-✦ » Aɴ ᴏᴘᴇɴ sᴏᴜʀᴄᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ, ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ ᴩʏʀᴏɢʀᴀᴍ.
+❍ Aɴ ᴏᴘᴇɴ sᴏᴜʀᴄᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ, ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ ᴩʏʀᴏɢʀᴀᴍ.
 
-✦ » ᴘʟᴇᴀꜱᴇ ᴄʜᴏᴏꜱᴇ ᴛʜᴇ ᴘʏᴛʜᴏɴ ʟɪʙʀᴀʀʏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴ ꜰᴏʀ.
+❍ ᴘʟᴇᴀꜱᴇ ᴄʜᴏᴏꜱᴇ ᴛʜᴇ ᴘʏᴛʜᴏɴ ʟɪʙʀᴀʀʏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴ ꜰᴏʀ.
 
-✦ » ɪғ ʏᴏᴜ ɴᴇᴇᴅ ᴀɴʏ ʜᴇʟᴘ, ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ ᴏᴡɴᴇʀ: [ᯓ𓆰𝅃꯭᳚ ⃪♔͢༎꯭𝝦꯭ ϒ ꯭τ ꯭ዙ ꯭𝛐፝֟֟֟͠ ꯭𝛈꯭ 𓆪꯭ 𝆺꯭𝅥⇢](tg://user?id={OWNER_ID}) !""",
+❍ ɪғ ʏᴏᴜ ɴᴇᴇᴅ ᴀɴʏ ʜᴇʟᴘ, ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ ᴏᴡɴᴇʀ: [ᯓ𓆰𝅃꯭᳚ ⃪♔͢༎꯭𝝦꯭ ϒ ꯭τ ꯭ዙ ꯭𝛐፝֟֟֟͠ ꯭𝛈꯭ 𓆪꯭ 𝆺꯭𝅥⇢](tg://user?id={OWNER_ID}) !""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="▪ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ ▪️", callback_data="generate")
+                    InlineKeyboardButton(text="˹ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ ˼", callback_data="generate")
                 ],
                 [
-                    InlineKeyboardButton("🔸 sᴜᴘᴘᴏʀᴛ🔸", url="https://t.me/BABY09_WORLD"),
-                    InlineKeyboardButton("▫️ ᴜᴘᴅᴀᴛᴇs▫️", url="https://t.me/CHATING_HUB09")
-                ]
+                    InlineKeyboardButton("˹ sᴜᴘᴘᴏʀᴛ ˼", url="https://t.me/+OL6jdTL7JAJjYzVl"),
+                    InlineKeyboardButton("˹ ᴜᴘᴅᴀᴛᴇs ˼", url="https://t.me/BABY09_WORLD")
+                ],
+                [
+                    InlineKeyboardButton("˹ sᴏᴜʀᴄᴇ ˼", url="https://github.com/BABY-MUSIC/BABYSTRING_GEN"),
+                    InlineKeyboardButton("˹ ᴍᴜsɪᴄ ʙᴏᴛ ˼", url="https://t.me/BABY_MUSIC09_BOT")
+                ]                
             ]
-        ),
-        disable_web_page_preview=True,
+        )
     )
