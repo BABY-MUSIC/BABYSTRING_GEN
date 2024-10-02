@@ -3,10 +3,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID","23342470"))
-API_HASH = getenv("API_HASH","824d7edf65f29a3bb7125173ff8ca9b0")
+API_ID = int(getenv("API_ID","16457832"))
+API_HASH = getenv("API_HASH","3030874d0befdb5d05597deacc3e83ab")
 BOT_TOKEN = getenv("BOT_TOKEN")
-OWNER_ID = int(getenv("OWNER_ID","6407861676"))
+OWNER_ID = int(getenv("OWNER_ID","7400383704"))
 
-MONGO_DB_URI = getenv("MONGO_DB_URI","mongodb+srv://BABYTUNE7654:<BABYTUNE7654>@cluster0.i7r8ucr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI","mongodb+srv://vivek:1234567890@cluster0.c48d8ih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 MUST_JOIN = getenv("MUST_JOIN","BABY09_WORLD")
