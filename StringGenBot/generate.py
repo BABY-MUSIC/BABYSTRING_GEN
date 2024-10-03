@@ -165,11 +165,11 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             except (PasswordHashInvalid, PasswordHashInvalidError, PasswordHashInvalid1):
                 await two_step_msg.reply("❍ ᴛʜᴇ ᴩᴀssᴡᴏʀᴅ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ᴡʀᴏɴɢ.\n\n❍ ᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.", quote=True, reply_markup=InlineKeyboardMarkup(gen_button))
                 return
-    else:
-if telethon:
-    await client.start(bot_token=phone_number)
 else:
-    await client.sign_in_bot(phone_number)
+    if telethon:
+        await client.start(bot_token=phone_number)
+    else:
+        await client.sign_in_bot(phone_number)
 
 # Saving the session string based on the 'telethon' flag
 if telethon:
