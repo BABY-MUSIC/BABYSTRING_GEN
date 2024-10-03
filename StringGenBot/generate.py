@@ -155,20 +155,24 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
                 await msg.reply("❍ ᴛɪᴍᴇ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ ᴏғ 5 ᴍɪɴᴜᴛᴇs.\n\n❍ ᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.", reply_markup=InlineKeyboardMarkup(gen_button))
                 return
             try:
-                password = two_step_msg.text
-                if telethon:
-                    await client.sign_in(password=password)
-                else:
-                    await client.check_password(password=password)
-                if await cancelled(api_id_msg):
-                    return
-            except (PasswordHashInvalid, PasswordHashInvalidError, PasswordHashInvalid1):
-                await two_step_msg.reply("❍ ᴛʜᴇ ᴩᴀssᴡᴏʀᴅ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ᴡʀᴏɴɢ.\n\n❍ ᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.", quote=True, reply_markup=InlineKeyboardMarkup(gen_button))
-                return
+    # Your code that may raise an exception
+    password = two_step_msg.text
+    if telethon:
+        await client.sign_in(password=password)
+    else:
+        await client.check_password(password=password)
+    if await cancelled(api_id_msg):
+        return
+except (PasswordHashInvalid, PasswordHashInvalidError, PasswordHashInvalid1):
+    await two_step_msg.reply("❍ ᴛʜᴇ ᴩᴀssᴡᴏʀᴅ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ᴡʀᴏɴɢ.\n\n❍ ᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.", quote=True, reply_markup=InlineKeyboardMarkup(gen_button))
+    return
 else:
+    # Code to execute if no exception is raised
     if telethon:
         await client.start(bot_token=phone_number)
     else:
+        # Handle the other case
+
         await client.sign_in_bot(phone_number)
 
 # Saving the session string based on the 'telethon' flag
