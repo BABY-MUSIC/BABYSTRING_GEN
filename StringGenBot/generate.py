@@ -65,13 +65,13 @@ async def main(_, msg):
 
 async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: bool = False, is_bot: bool = False):
     if telethon:
-        ty = "𝖳𝖤𝖫𝖤𝖳𝖧𝖮𝖭"
+        ty = "ᴛᴇʟᴇᴛʜᴏɴ"
     else:
-        ty = "𝖯𝖸𝖱𝖮𝖦𝖱𝖠𝖬"
+        ty = "ᴘʏʀᴏɢʀᴀᴍ"
         if not old_pyro:
-            ty += " 𝖵2"
+            ty += " ᴠ²"
     if is_bot:
-        ty += " 𝖡𝖮𝖳"
+        ty += "ʙᴏᴛ"
     await msg.reply(f"❍ ᴛʀʏɪɴɢ ᴛᴏ sᴛᴀʀᴛ **{ty}** sᴇssɪᴏɴ ɢᴇɴʀᴀᴛᴏʀ...")
     user_id = msg.chat.id
     api_id_msg = await bot.ask(user_id, "❍ ᴘʟᴇᴀsᴇ sᴇɴᴅ ʏᴏᴜʀ **ᴀᴘɪ_ɪᴅ** ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ.\n\n❍ ᴄʟɪᴄᴋ ᴏɴ /skip ғᴏʀ ᴜsɪɴɢ ʙᴏᴛ ᴀᴘɪ.", filters=filters.text)
