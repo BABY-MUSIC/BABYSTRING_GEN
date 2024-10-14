@@ -38,17 +38,18 @@ ask_ques = "**「 ᴄʜᴏsᴇ ᴏɴᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ 
 buttons_ques = [
     [
         InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ˼", callback_data="pyrogram"),
-        InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ᴠ² ˼", callback_data="pyrogram_v2"),
-        InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ᴠ³ ˼", callback_data="pyrogram_v3"),  # V3 Button
+        InlineKeyboardButton("˹ ᴛᴇʟᴇᴛʜᴏɴ ˼", callback_data="telethon"),
     ],
     [
-        InlineKeyboardButton("˹ ᴛᴇʟᴇᴛʜᴏɴ ˼", callback_data="telethon"),
+        InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ᴠ² ˼", callback_data="pyrogram_v2"),
+        InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ᴠ³ ˼", callback_data="pyrogram_v3"),
     ],
     [
         InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ʙᴏᴛ ˼", callback_data="pyrogram_bot"),
         InlineKeyboardButton("˹ ᴛᴇʟᴇᴛʜᴏɴ ʙᴏᴛ ˼", callback_data="telethon_bot"),
     ],
 ]
+
 
 
 @Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "str"]))
