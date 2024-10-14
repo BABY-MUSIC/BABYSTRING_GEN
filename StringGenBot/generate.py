@@ -38,7 +38,8 @@ ask_ques = "**「 ᴄʜᴏsᴇ ᴏɴᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ 
 buttons_ques = [
     [
         InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ˼", callback_data="pyrogram"),
-        InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ᴠ² ˼", callback_data="pyrogram"),
+        InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ᴠ² ˼", callback_data="pyrogram_v2"),
+        InlineKeyboardButton("˹ ᴘʏʀᴏɢʀᴀᴍ ᴠ³ ˼", callback_data="pyrogram_v3"),  # V3 Button
     ],
     [
         InlineKeyboardButton("˹ ᴛᴇʟᴇᴛʜᴏɴ ˼", callback_data="telethon"),
@@ -49,29 +50,28 @@ buttons_ques = [
     ],
 ]
 
-gen_button = [
-    [
-        InlineKeyboardButton(text="˹ ɢᴇɴᴇʀᴀᴛᴇ sᴇssɪᴏɴ ˼", callback_data="generate")
-    ]
-]
-
-
-
 
 @Client.on_message(filters.private & ~filters.forwarded & filters.command(["generate", "gen", "string", "str"]))
 async def main(_, msg):
     await msg.reply(ask_ques, reply_markup=InlineKeyboardMarkup(buttons_ques))
 
 
-async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: bool = False, is_bot: bool = False):
+async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: bool = False, is_bot: bool = False, pyro_v3: bool = False):
     if telethon:
         ty = "ᴛᴇʟᴇᴛʜᴏɴ"
     else:
         ty = "ᴘʏʀᴏɢʀᴀᴍ"
-        if not old_pyro:
+        if pyro_v3:
+            ty += " ᴠ³"  # Adding Pyrogram V3 label
+        elif not old_pyro:
             ty += " ᴠ²"
+    
     if is_bot:
         ty += "ʙᴏᴛ"
+        
+    # Additional logic based on V3 requirements goes here
+
+    # The rest of the session generation logic remains the same
     await msg.reply(f"❍ ᴛʀʏɪɴɢ ᴛᴏ sᴛᴀʀᴛ **{ty}** sᴇssɪᴏɴ ɢᴇɴʀᴀᴛᴏʀ...")
     user_id = msg.chat.id
     api_id_msg = await bot.ask(user_id, "❍ ᴘʟᴇᴀsᴇ sᴇɴᴅ ʏᴏᴜʀ **ᴀᴘɪ_ɪᴅ** ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ.\n\n❍ ᴄʟɪᴄᴋ ᴏɴ /skip ғᴏʀ ᴜsɪɴɢ ʙᴏᴛ ᴀᴘɪ.", filters=filters.text)
