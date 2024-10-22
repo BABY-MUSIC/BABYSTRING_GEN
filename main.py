@@ -1,5 +1,4 @@
 import config
-import time
 import logging
 from pyrogram import Client, idle
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
@@ -33,7 +32,14 @@ def home():
 if __name__ == "__main__":
     print("𝚂𝚝𝚛𝚒𝚗𝚐-𝚋𝚊𝚋𝚢 𝚂𝚎𝚜𝚜𝚒𝚘𝚗 𝙶𝚎𝚗 𝚜𝚝𝚊𝚛𝚝𝚒𝚗𝚐...")
     try:
-        app.start()
+        app.start()  # Start the app first
+        
+        uname = app.get_me().username
+        print(f"@{uname} NOW STRING-BABY SESSION GEN IS READY TO GEN SESSION")
+        
+        # Start the bot's idle mode here
+        idle()
+
     except ApiIdInvalid:
         raise Exception("Your API_ID is not valid.")
     except ApiIdPublishedFlood:
@@ -43,14 +49,6 @@ if __name__ == "__main__":
     except Exception as e:
         logging.error(f"An unexpected error occurred: {e}")
         raise
-
-    uname = app.get_me().username
-    print(f"@{uname} NOW STRING-BABY SESSION GEN IS READY TO GEN SESSION")
-
-    # Start Flask app on port 8000
-    flask_app.run(host='0.0.0.0', port=8000)
-
-    idle()
-
-    app.stop()
-    print("🇸 🇪 🇸 🇸 🇮 🇴 🇳  🇬 🇪 🇳 🇷 🇦 🇹 🇮 🇳 🇬  🇸 🇹 🇴 🇵 🇵 🇪 🇩...")
+    finally:
+        app.stop()
+        print("🇸 🇪 🇸 🇸 🇮 🇴 🇳  🇬 🇪 🇳 🇷 🇦 🇹 🇮 🇳 🇬  🇸 🇹 🇴 🇵 🇵 🇪 🇩...")
