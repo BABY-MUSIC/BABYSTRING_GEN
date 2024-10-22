@@ -8,4 +8,4 @@ COPY . /app/
 WORKDIR /app/
 RUN pip3 install -U -r requirements.txt
 
-CMD python3 -m RADHIKA
+CMD python3 main.py
