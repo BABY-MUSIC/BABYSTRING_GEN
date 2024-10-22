@@ -8,7 +8,6 @@ RUN apt-get install -y python3-lib2to3
 
 # Upgrade pip
 RUN pip3 install -U pip
-RUN pip install imghdr
 
 # Copy app code to container
 COPY . /app/
