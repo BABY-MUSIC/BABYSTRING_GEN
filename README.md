@@ -1,13 +1,10 @@
 <p align="center">
   <img src="https://telegra.ph/file/8385702959b559b198991.jpg" alt="StringGen">
 
- 
-### 🤤 ғᴇᴀᴛᴜʀᴇs
-
-- [»] 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐏𝐘𝐑𝐎𝐆𝐑𝐀𝐌 𝐕2 🔥
-- [»] 𝐒𝐀𝐅𝐄 𝐘𝐎𝐔𝐑 𝐁𝐎𝐓 🔥
-- [»] 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐏𝐘𝐑𝐎𝐆𝐑𝐀𝐌 & 𝐓𝐄𝐋𝐄𝐓𝐇𝐎𝐍 🔥
-- [»] 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐒𝐄𝐒𝐒𝐈𝐎𝐍 𝐆𝐄𝐍 𝐅𝐎𝐑 𝐁𝐎𝐓𝐅𝐀𝐓𝐇𝐄𝐑 𝐁𝐎𝐓𝐒
+ sᴜᴘᴘᴏʀᴛ ᴘʏʀᴏɢʀᴀᴍ ᴠ³ 
+ sᴀғᴇ ʏᴏᴜʀ ɪᴅ
+ sᴜᴘᴘᴏʀᴛ ᴘʏʀᴏ+ᴛᴇʟᴇᴛʜᴏɴ
+ sᴜᴘᴘᴏʀᴛ sᴇssɪᴏɴ ɢᴇɴ ғᴏʀ ʙᴏᴛғᴀᴛʜᴇʀ ʙᴏᴛs
 
 ### 🚀 ᴅᴇᴘʟᴏʏ ᴛᴏ ʜᴇʀᴏᴋᴜ
   
@@ -17,7 +14,7 @@
 
 ### 🙄 ᴅᴇᴍᴏ/ᴛᴇsᴛ ʙᴏᴛ
   
-  [sᴛʀɪɴɢ ʙᴏᴛ 🍑](https://telegram.me/StringSesssionGeneratorRobot)
+  [˹ sᴇssɪᴏɴ-ʙᴏᴛ ˼](https://telegram.me/STRING_BABYGEN_BOT)
 
 ```
 Atleast Give A Star and Fork The Repo 🖤
