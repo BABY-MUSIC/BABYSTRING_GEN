@@ -3,13 +3,6 @@ from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
 from StringGenBot.generate import generate_session, ask_ques, buttons_ques
 
-ERROR_MESSAGE = """ɪғ ʏᴏᴜ ᴀʀᴇ ɢᴇᴛᴛɪɴɢ ᴇʀʀᴏʀ!
-ʏᴏᴜ ʜᴀᴠᴇ ᴅᴏɴᴇ sᴏᴍᴇ ᴍɪsᴛᴀᴋᴇ ᴡʜɪʟᴇ ɢᴇɴᴇʀᴀᴛɪɴɢ.
-ɢɪᴠᴇɴ ᴡʀᴏɴɢ ᴅᴀᴛᴀ ᴏʀ ᴇʟsᴇ.
-ᴛʀʏ ᴀɢᴀɪɴ ɪғ ʏᴏᴜ ᴄᴀɴ.
-ᴏʀ ɪғ ʏᴏᴜ ʜᴀᴠᴇ ғɪʟʟᴇᴅ ᴛʜɪɴɢs ᴄᴏʀʀᴇᴄᴛʟʏ ʙᴜᴛ ɢᴇᴛᴛɪɴɢ ᴇʀʀᴏʀ,
-ᴛʜᴇɴ ғᴏʀᴡᴀʀᴅ ᴇʀʀᴏʀ ᴍsɢ ᴛᴏ [🂱ᴅᴀ፝֟ʀᴋ↯ຶ𓆈PʏᎢʜᝪɴᯓᡣ𐭩](https://t.me/uttam470) !"""
-
 @Client.on_callback_query(filters.regex(pattern=r"^(generate|pyrogram|pyrogram_bot|telethon_bot|telethon|pyrogram_v3|pyrogram_v2)$"))
 async def _callbacks(bot: Client, callback_query: CallbackQuery):
     query = callback_query.matches[0].group(1)
@@ -33,8 +26,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             await callback_query.answer()
             await generate_session(bot, callback_query.message, telethon=True)
     except Exception as e:
+        # Print detailed traceback for debugging
         print(traceback.format_exc())
-        print(e)
-        # Check if the callback_query.message is still available
-        if callback_query.message:
-            await callback_query.message.reply(ERROR_MESSAGE.format(str(e)))
+        print(f"Error: {e}")
+        # Do not send any error message to the user
