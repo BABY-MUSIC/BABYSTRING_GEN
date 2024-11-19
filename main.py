@@ -57,5 +57,6 @@ if __name__ == "__main__":
         logging.error(f"An unexpected error occurred: {e}")
         raise
     finally:
-        app.stop()
+        if app.is_connected:  # Check if the client is still connected
+            app.stop()
         print("🇸 🇪 🇸 🇸 🇮 🇴 🇳  🇬 🇪 🇳 🇷 🇦 🇹 🇮 🇳 🇬  🇸 🇹 🇴 🇵 🇵 🇪 🇩...")
