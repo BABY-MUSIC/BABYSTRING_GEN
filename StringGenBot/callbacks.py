@@ -35,4 +35,6 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
     except Exception as e:
         print(traceback.format_exc())
         print(e)
-        await callback_query.message.reply(ERROR_MESSAGE.format(str(e)))
+        # Check if the callback_query.message is still available
+        if callback_query.message:
+            await callback_query.message.reply(ERROR_MESSAGE.format(str(e)))
